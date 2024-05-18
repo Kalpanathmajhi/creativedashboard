@@ -1,6 +1,7 @@
 import { RiFlag2Line } from '@remixicon/react';
 import Pagination from '@mui/material/Pagination';
 import { RiSearchLine } from '@remixicon/react';
+import style from "../accounts/userTable.module.css"
 
 import {
   Badge,
@@ -13,6 +14,7 @@ import {
   TableRow,
   TextInput,
 } from '@tremor/react';
+import styled from '@emotion/styled';
 
 const data = [
   {
@@ -89,28 +91,8 @@ const data = [
     status: 'In Progress',
     Details: "Edit"
   },
-  {
-    name: 'Karin Keller-Sutter',
-    Role: 'Federal Councillor',
-    departement: 'The Federal Department of Finance (FDF)',
-    status: 'Approved',
-    Details: "Edit"
-  },
-  {
-    name: 'Guy Parmelin',
-    Role: 'Federal Councillor',
-    departement:
-      'The Federal Department of Economic Affairs, Education and Research (EAER)',
-    status: 'Declined',
-    Details: "Edit"
-  },
-  {
-    name: 'Elisabeth Baume-Schneider',
-    Role: 'Federal Councillor',
-    departement: 'The Federal Department of Home Affairs (FDHA)',
-    status: 'In Progress',
-    Details: "Edit"
-  },
+  
+  
 ];
 
 export function TableUsageExample() {
@@ -122,8 +104,7 @@ export function TableUsageExample() {
       </div>
     
     <Card>
-      <h3 className="text-tremor-content-strong dark:text-dark-tremor-content-strong font-semibold">List of Swiss Federal Councillours</h3>
-      <Table className="mt-5">
+      <Table className="mt-7">
         <TableHead>
           <TableRow>
             <TableHeaderCell>ITEMS & DESCRIPTIONS</TableHeaderCell>
@@ -160,8 +141,10 @@ export function TableUsageExample() {
       </Table>
       
     </Card>
+    <div className={style.bottomContainer}>
     <h3>Showing 1 to 10 of 50 data</h3>
-    <Pagination count={10} variant="outlined" shape="rounded" />
+    <Pagination count={10} variant="outlined" shape="rounded"/>
+    </div>
     </>
    
   );

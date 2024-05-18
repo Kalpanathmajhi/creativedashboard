@@ -3,30 +3,22 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const pages = ['Accounts', 'Reports', 'Forms', 'Role', 'Help Centre'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const router = useRouter();
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -37,16 +29,30 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-start' , gap: 10}}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-start', gap: 2 }}>
+            {pages.map((page) => {
+              const path = '/' + page.toLowerCase().replace(/ /g, '-');
+              const isActive = router.pathname === path;
+              return (
+                <Link href={path} passHref>
+            <Button
+                sx={{
+                    my: 2,
+                    color: isActive ? 'secondary.main' : 'white', // Active color
+                    borderBottom: isActive ? '2px solid white' : 'none', // Bottom border if active
+                    backgroundColor: isActive ? '#1976d2' : 'transparent', 
+                    '&:hover': {
+                        backgroundColor: isActive ? '#115293' : '', 
+                        borderBottom: '2px solid white' 
+                    },
+                    display: 'block'
+                }}
+            >
                 {page}
-              </Button>
-            ))}
+            </Button>
+        </Link>
+              );
+            })}
           </Box>
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
             <Tooltip title="Open settings">
@@ -69,11 +75,6 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
             </Menu>
           </Box>
         </Toolbar>
