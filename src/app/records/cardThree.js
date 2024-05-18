@@ -9,7 +9,7 @@ import { Button } from '@tremor/react';
 export function CardThree() {
   return (
     <Card
-      className="mx-auto max-w-xs"
+      className="mx-auto max-w-sm"
    
     >
      <p className="text-3xl text-tremor-content-strong dark:text-dark-tremor-content-strong font-semibold">49</p>

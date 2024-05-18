@@ -39,7 +39,7 @@ export function BarChartUsageExample() {
   return (
     <>
     <Card
-      className="mx-auto max-w-xs">
+      className="mx-auto max-w-xl">
       <h3 className="text-lg font-medium text-tremor-content-strong dark:text-dark-tremor-content-strong">
        Deals
       </h3>

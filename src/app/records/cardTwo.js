@@ -9,7 +9,7 @@ import { Badge, BadgeDelta } from '@tremor/react';
 export function Cardtwo() {
   return (
     <Card
-      className="mx-auto max-w-xs"
+      className="mx-auto max-w-sm"
      
      
     >

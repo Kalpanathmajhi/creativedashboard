@@ -20,10 +20,10 @@ const sales = [
 const valueFormatter = (number) =>
   ` ${Intl.NumberFormat('us').format(number).toString()}`;
 
-export function DonutChartUsageExample() {
+export function CardOne() {
   return (
     <>
-      <Card className="mx-auto max-w-xs">
+      <Card className="mx-auto max-w-sm">
       <p className="text-text-tremor-content-strong dark:text-dark-tremor-content-strong font-semibold">237</p>
       <p className="text-xltremor-default text-tremor-content dark:text-dark-tremor-content">Total User</p>
 

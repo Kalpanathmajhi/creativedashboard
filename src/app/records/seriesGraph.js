@@ -1,5 +1,4 @@
 import { AreaChart,Card } from '@tremor/react';
-
 const chartdata = [
   {
     date: 'Jan 22',
@@ -71,12 +70,10 @@ export function AreaChartUsageExample() {
   return (
     <>
     <Card
-      className="mx-auto max-w-xs"
+      className="mx-auto max-w-xl"
    
     >
      <p className="text-tremor-metric text-tremor-content-strong dark:text-dark-tremor-content-strong font-semibold">Users Over Time</p>
-   
-      
       <AreaChart
         className="mt-4 h-72"
         data={chartdata}
