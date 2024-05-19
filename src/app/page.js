@@ -4,6 +4,7 @@ import Footer from "./components/footer";
 import style from "./mainPage.module.css"
 import { CardHero } from "./components/mainCard";
 import { CardSlider } from "./components/sliderCard";
+import Image from "next/image";
 export default function Home() {
   return (
     <>
@@ -17,10 +18,12 @@ export default function Home() {
               discover interesting features from us.
             </div>
           </div>
-          <img
+          <Image
             className={style.mainImage}
             src="/assets/Illustration1.png"
             alt="Creative Logo"
+            width={20}
+            height={20}
           />
         </div>
         <div className={style.centreTextMain}>

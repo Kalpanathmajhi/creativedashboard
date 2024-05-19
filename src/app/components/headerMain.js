@@ -16,7 +16,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Dialog, DialogTitle, DialogContent, TextField, DialogActions } from '@mui/material';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
+import Image from 'next/image'; // Import the Image component from next/image
 
 const drawerWidth = 240;
 const navItems = ['Pricing', 'Testimonials', 'Sign In'];
@@ -27,7 +28,7 @@ function DrawerAppBar(props) {
   const [openDialog, setOpenDialog] = React.useState(false);
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const router  = useRouter();
+  const router = useRouter();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -88,10 +89,12 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            <img
+            <Image
               src="/assets/Logo.png"
               alt="Creative Logo"
-              style={{ height: '36px', width: 'auto' }}
+              width={100}
+              height={36} 
+              
             />
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>

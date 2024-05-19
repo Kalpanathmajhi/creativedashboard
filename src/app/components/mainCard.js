@@ -1,13 +1,14 @@
 import { Card } from '@tremor/react';
 import { Button } from '@tremor/react';
 import style from "../components/minCard.module.css";
+import Image from 'next/image';
 
 export function CardHero() {
     return (
         <div className={style.cardContainer}>
             <Card className="mx-auto max-w-xs">
                 <div className="text-center">
-                    <img
+                    <Image
                         src="/assets/Free.png"
                         alt="Creative Logo"
                         className="mx-auto"
@@ -16,11 +17,11 @@ export function CardHero() {
                 <p className="text-center text-slate-400"><b>Free Plan</b></p>
                 <div className={style.cardText}>
                     <div className="flex items-center">
-                        <img src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" />
                         <p className="text-slate-400">Free User</p>
                     </div>
                     <div className="flex items-center">
-                        <img src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" />
                         <p className="text-slate-400">Works on 1 Device at once</p>
                     </div>
                 </div>
@@ -33,7 +34,7 @@ export function CardHero() {
             </Card>
             <Card className="mx-auto max-w-xs">
                 <div className="text-center">
-                    <img
+                    <Image
                         src="/assets/Free.png"
                         alt="Creative Logo"
                         className="mx-auto"
@@ -42,15 +43,15 @@ export function CardHero() {
                 <p className="text-center text-slate-400"><b>Standard Plan</b></p>
                 <div className={style.cardText}>
                     <div className="flex items-center">
-                        <img src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" />
                         <p className="text-slate-400">Limited people</p>
                     </div>
                     <div className="flex items-center">
-                        <img src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" />
                         <p className="text-slate-400">Works on 1 Device at once</p>
                     </div>
                     <div className="flex items-center">
-                        <img src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" />
                         <p className="text-slate-400">Connect Anyware</p>
                     </div>
                 </div>
@@ -63,7 +64,7 @@ export function CardHero() {
             </Card>
             <Card className="mx-auto max-w-xs">
                 <div className="text-center">
-                    <img
+                    <Image
                         src="/assets/Free.png"
                         alt="Creative Logo"
                         className="mx-auto"
@@ -72,19 +73,19 @@ export function CardHero() {
                 <p className="text-center text-slate-400"><b>Premium Plan</b></p>
                 <div className={style.cardText}>
                     <div className="flex items-center">
-                        <img src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" />
                         <p className="text-slate-400">All Creative Heads</p>
                     </div>
                     <div className="flex items-center">
-                        <img src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" />
                         <p className="text-slate-400">Works on All Devices</p>
                     </div>
                     <div className="flex items-center">
-                        <img src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" />
                         <p className="text-slate-400">Connect Anyware</p>
                     </div>
                     <div className="flex items-center">
-                        <img src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" />
                         <p className="text-slate-400">Get New Features</p>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-
+import Image from 'next/image';
 export default function Footer() {
   return (
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
@@ -14,7 +14,7 @@ export default function Footer() {
             <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
                 <MDBIcon icon="gem" className="me-3" />
-                <img
+                <Image
               src="/assets/Logo.png"
               alt="Creative Logo"
               style={{ height: '36px', width: 'auto' }}
