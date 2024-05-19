@@ -17,19 +17,19 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['Pricing', 'Testimonials', "Sign In"];
 
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen(prevState => !prevState);
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', bgcolor: 'white' }}>
+      <Typography variant="h6" sx={{ my: 2, color: 'black' }}>
         MUI
       </Typography>
       <Divider />
@@ -37,7 +37,7 @@ function DrawerAppBar(props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item} primaryTypographyProps={{ color: 'text.primary' }} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -50,7 +50,7 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" color="default" sx={{ bgcolor: 'white', color: 'black' }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -66,15 +66,34 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            <img
+              src="/assets/Logo.png"
+              alt="Creative Logo"
+              style={{ height: '36px', width: 'auto' }}
+            />
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button key={item} sx={{ color: 'black' }}>
                 {item}
               </Button>
             ))}
           </Box>
+          <Button
+            variant="contained"
+            href="#contained-buttons"
+            sx={{
+              borderRadius: '20px',
+              padding: '6px 16px',
+              color: 'black',
+              bgcolor: 'white',
+              '&:hover': {
+                bgcolor: 'grey.200',
+              }
+            }}
+          >
+            Sign Up
+          </Button>
         </Toolbar>
       </AppBar>
       <nav>
@@ -88,22 +107,17 @@ function DrawerAppBar(props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, bgcolor: 'white' },
           }}
         >
           {drawer}
         </Drawer>
       </nav>
-   
     </Box>
   );
 }
 
 DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 

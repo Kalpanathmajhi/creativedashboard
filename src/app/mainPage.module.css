@@ -1,0 +1,37 @@
+.mainSection {
+    margin-top: 5rem;
+    margin-left: 100px;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+  }
+.mainHeading{
+    flex: 1; 
+    
+    font-size: 50px;
+}
+
+.secondHeading{
+    margin-top: 1rem;
+    font-size: 16px;
+}
+.mainImage {
+    margin-right: 100px;
+    width: 40%;
+    height: auto;
+  }
+  .centreTextMain {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    text-align: center; /* Ensures text within the divs is centered as well */
+  }
+  
+  .centreText {
+    font-size: 40px;
+    margin: 10px 0; 
+  }
+  .centreText2 {
+    margin-bottom: 2rem;
+  }

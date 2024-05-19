@@ -1,0 +1,12 @@
+.cardContainer{
+    display: flex;
+}
+.cardText{
+    margin-top: 4rem;
+}
+.bottomText{
+    margin-top: 10rem;
+}
+.bottomText p {
+    font-size: 20px;
+}
