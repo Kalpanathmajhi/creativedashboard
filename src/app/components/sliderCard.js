@@ -3,6 +3,7 @@ import { Card } from '@tremor/react';
 import style from "./sliderCard.module.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from 'next/image';
 export function CardSlider() {
     var settings = {
         dots: true,
@@ -45,12 +46,12 @@ export function CardSlider() {
                 {[1, 2, 3, 4,].map(index => (
                     <Card key={index} className="mx-auto max-w-xs">
                         <div className={style.sliderContainer}>
-                            <img src="/assets/picpage.png" alt="Profile" />
+                            <Image src="/assets/picpage.png" alt="Profile" width={30} height={8}/>
                             <p className="text-slate-100">Viezh Robert</p>
                             <span>Warsaw, Poland</span>
                             <div>
                                 <p className="text-slate-200">4.5</p>
-                                <img src="/assets/Vector.png" alt="Star Rating" />
+                                <Image src="/assets/Vector.png" alt="Star Rating" width={10} height={8}/>
                             </div>
                         </div>
                         <div>

@@ -31,7 +31,7 @@ export default function Home() {
             <b> Choose Your Plan</b>
           </div>
           <div className={style.centreText2}>
-            Let's choose the package that is best for you and explore it happily and <br />cheerfully.
+            Let&apos;s choose the package that is best for you and explore it happily and <br />cheerfully.
           </div>
         </div> 
         <div className={style.verticalCard}>

@@ -34,23 +34,23 @@ function ResponsiveAppBar() {
               const path = '/' + page.toLowerCase().replace(/ /g, '-');
               const isActive = router.pathname === path;
               return (
-                <Link href={path} passHref>
-            <Button
-                sx={{
-                    my: 2,
-                    color: isActive ? 'secondary.main' : 'white', // Active color
-                    borderBottom: isActive ? '2px solid white' : 'none', // Bottom border if active
-                    backgroundColor: isActive ? '#1976d2' : 'transparent', 
-                    '&:hover': {
-                        backgroundColor: isActive ? '#115293' : '', 
-                        borderBottom: '2px solid white' 
-                    },
-                    display: 'block'
-                }}
-            >
-                {page}
-            </Button>
-        </Link>
+                <Link href={path} passHref key={path}>
+                  <Button
+                    sx={{
+                      my: 2,
+                      color: isActive ? 'secondary.main' : 'white', // Active color
+                      borderBottom: isActive ? '2px solid white' : 'none', // Bottom border if active
+                      backgroundColor: isActive ? '#1976d2' : 'transparent',
+                      '&:hover': {
+                        backgroundColor: isActive ? '#115293' : '',
+                        borderBottom: '2px solid white'
+                      },
+                      display: 'block'
+                    }}
+                  >
+                    {page}
+                  </Button>
+                </Link>
               );
             })}
           </Box>
