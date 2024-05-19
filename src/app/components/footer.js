@@ -17,7 +17,8 @@ export default function Footer() {
                 <Image
               src="/assets/Logo.png"
               alt="Creative Logo"
-              style={{ height: '36px', width: 'auto' }}
+              width={200}
+                        height={10}
             />
               </h6>
               <p>

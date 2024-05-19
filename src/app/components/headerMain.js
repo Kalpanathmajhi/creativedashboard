@@ -92,7 +92,7 @@ function DrawerAppBar(props) {
             <Image
               src="/assets/Logo.png"
               alt="Creative Logo"
-              width={100}
+              width={200}
               height={36} 
               
             />

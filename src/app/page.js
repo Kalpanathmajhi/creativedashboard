@@ -22,7 +22,7 @@ export default function Home() {
             className={style.mainImage}
             src="/assets/Illustration1.png"
             alt="Creative Logo"
-            width={20}
+            width={200}
             height={20}
           />
         </div>

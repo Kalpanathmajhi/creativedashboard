@@ -12,16 +12,20 @@ export function CardHero() {
                         src="/assets/Free.png"
                         alt="Creative Logo"
                         className="mx-auto"
+                        width={100}
+                        height={10}
                     />
                 </div>
                 <p className="text-center text-slate-400"><b>Free Plan</b></p>
                 <div className={style.cardText}>
                     <div className="flex items-center">
-                        <Image src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick"   width={10}
+                        height={10}/>
                         <p className="text-slate-400">Free User</p>
                     </div>
                     <div className="flex items-center">
-                        <Image src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" width={10}
+                        height={10}/>
                         <p className="text-slate-400">Works on 1 Device at once</p>
                     </div>
                 </div>
@@ -38,20 +42,25 @@ export function CardHero() {
                         src="/assets/Free.png"
                         alt="Creative Logo"
                         className="mx-auto"
+                        width={100}
+                        height={10}
                     />
                 </div>
                 <p className="text-center text-slate-400"><b>Standard Plan</b></p>
                 <div className={style.cardText}>
                     <div className="flex items-center">
-                        <Image src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" width={10}
+                        height={10}/>
                         <p className="text-slate-400">Limited people</p>
                     </div>
                     <div className="flex items-center">
-                        <Image src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" width={10}
+                        height={10}/>
                         <p className="text-slate-400">Works on 1 Device at once</p>
                     </div>
                     <div className="flex items-center">
-                        <Image src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" width={10}
+                        height={10}/>
                         <p className="text-slate-400">Connect Anyware</p>
                     </div>
                 </div>
@@ -68,24 +77,30 @@ export function CardHero() {
                         src="/assets/Free.png"
                         alt="Creative Logo"
                         className="mx-auto"
+                        width={100}
+                        height={10}
                     />
                 </div>
                 <p className="text-center text-slate-400"><b>Premium Plan</b></p>
                 <div className={style.cardText}>
                     <div className="flex items-center">
-                        <Image src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" width={10}
+                        height={10}/>
                         <p className="text-slate-400">All Creative Heads</p>
                     </div>
                     <div className="flex items-center">
-                        <Image src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" width={10}
+                        height={10}/>
                         <p className="text-slate-400">Works on All Devices</p>
                     </div>
                     <div className="flex items-center">
-                        <Image src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" width={10}
+                        height={10}/>
                         <p className="text-slate-400">Connect Anyware</p>
                     </div>
                     <div className="flex items-center">
-                        <Image src="/assets/tick.png" alt="tick" />
+                        <Image src="/assets/tick.png" alt="tick" width={10}
+                        height={10}/>
                         <p className="text-slate-400">Get New Features</p>
                     </div>
                 </div>
