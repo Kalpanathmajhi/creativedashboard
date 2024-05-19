@@ -16,6 +16,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Dialog, DialogTitle, DialogContent, TextField, DialogActions } from '@mui/material';
+import { useRouter } from 'next/navigation'
 
 const drawerWidth = 240;
 const navItems = ['Pricing', 'Testimonials', 'Sign In'];
@@ -24,6 +25,9 @@ function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [openDialog, setOpenDialog] = React.useState(false);
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const router  = useRouter();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -35,6 +39,14 @@ function DrawerAppBar(props) {
 
   const handleDialogClose = () => {
     setOpenDialog(false);
+  };
+
+  const handleLogin = () => {
+    if (email === 'test@gmail.com' && password === '1234') {
+      router.push('/accounts');
+    } else {
+      alert('Invalid credentials');
+    }
   };
 
   const drawer = (
@@ -132,6 +144,8 @@ function DrawerAppBar(props) {
             type="email"
             fullWidth
             variant="standard"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             margin="dense"
@@ -140,11 +154,13 @@ function DrawerAppBar(props) {
             type="password"
             fullWidth
             variant="standard"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleDialogClose}>Cancel</Button>
-          <Button onClick={handleDialogClose}>Sign Up</Button>
+          <Button onClick={handleLogin}>Sign Up</Button>
         </DialogActions>
       </Dialog>
     </Box>

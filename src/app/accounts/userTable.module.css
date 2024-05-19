@@ -3,3 +3,17 @@
     justify-content: space-between;
    
 }
+.containersr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .searchInput {
+    width: 200px;
+  }
+  
+  .addButton {
+    margin-left: auto; /* Pushes the button to the far right */
+  }

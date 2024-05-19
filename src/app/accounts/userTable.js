@@ -1,8 +1,6 @@
-import { RiFlag2Line } from '@remixicon/react';
+import { RiFlag2Line, RiSearchLine } from '@remixicon/react';
 import Pagination from '@mui/material/Pagination';
-import { RiSearchLine } from '@remixicon/react';
-import style from "../accounts/userTable.module.css"
-
+import { Box, TextField, Typography, Button } from '@mui/material';
 import {
   Badge,
   Card,
@@ -12,9 +10,8 @@ import {
   TableHead,
   TableHeaderCell,
   TableRow,
-  TextInput,
 } from '@tremor/react';
-import styled from '@emotion/styled';
+import style from '../accounts/userTable.module.css';
 
 const data = [
   {
@@ -98,54 +95,58 @@ const data = [
 export function TableUsageExample() {
   return (
     <>
-    <h4>Users(38)</h4> 
-    <div>
-        <TextInput icon={RiSearchLine} placeholder="Search..." />
-      </div>
-    
-    <Card>
-      <Table className="mt-7">
-        <TableHead>
-          <TableRow>
-            <TableHeaderCell>ITEMS & DESCRIPTIONS</TableHeaderCell>
-            <TableHeaderCell>JOIN DATE</TableHeaderCell>
-            <TableHeaderCell>EARNINGS</TableHeaderCell>
-            <TableHeaderCell>STATUS</TableHeaderCell>
-            <TableHeaderCell>DETAILS</TableHeaderCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((item) => (
-            <TableRow key={item.name}>
-              <TableCell>{item.name}</TableCell>
-              <TableCell>
-                {item.Role}
-              </TableCell>
-              <TableCell>
-                {item.departement}
-              </TableCell>
-              <TableCell>
-                <Badge color="emerald" icon={RiFlag2Line}>
-                  {item.status}
-                </Badge>
-               
-              </TableCell>
-              <TableCell>
-              <Badge> Edit</Badge>
-                
-              </TableCell>
-              
+      <Box className={style.containersr}>
+        <Typography variant="h4" className={style.title}>
+          Users (38)
+        </Typography>
+        <TextField
+          placeholder="Search..."
+          variant="outlined"
+          size="small"
+          InputProps={{
+            startAdornment: <RiSearchLine />,
+          }}
+          className={style.searchInput}
+        />
+        <Button variant="contained" color="primary" className={style.addButton}>
+          Add User
+        </Button>
+      </Box>
+
+      <Card>
+        <Table className="mt-7">
+          <TableHead>
+            <TableRow>
+              <TableHeaderCell>ITEMS & DESCRIPTIONS</TableHeaderCell>
+              <TableHeaderCell>JOIN DATE</TableHeaderCell>
+              <TableHeaderCell>EARNINGS</TableHeaderCell>
+              <TableHeaderCell>STATUS</TableHeaderCell>
+              <TableHeaderCell>DETAILS</TableHeaderCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      
-    </Card>
-    <div className={style.bottomContainer}>
-    <h3>Showing 1 to 10 of 50 data</h3>
-    <Pagination count={10} variant="outlined" shape="rounded"/>
-    </div>
+          </TableHead>
+          <TableBody>
+            {data.map((item) => (
+              <TableRow key={item.name}>
+                <TableCell>{item.name}</TableCell>
+                <TableCell>{item.Role}</TableCell>
+                <TableCell>{item.departement}</TableCell>
+                <TableCell>
+                  <Badge color="emerald" icon={RiFlag2Line}>
+                    {item.status}
+                  </Badge>
+                </TableCell>
+                <TableCell>
+                  <Badge>Edit</Badge>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </Card>
+      <div className={style.bottomContainer}>
+        <h3>Showing 1 to 10 of 50 data</h3>
+        <Pagination count={10} variant="outlined" shape="rounded" />
+      </div>
     </>
-   
   );
 }
