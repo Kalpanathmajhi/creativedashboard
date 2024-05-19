@@ -21,3 +21,7 @@ bun dev
 ## npm install
 
 ## npm run dev
+
+## email and password for sign up
+## email - test@gmail.com
+## password - 1234
