@@ -1,0 +1,11 @@
+.sliderContainerMain{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+.sliderContainerMain .slick-slide > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

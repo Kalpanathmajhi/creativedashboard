@@ -3,6 +3,7 @@ import DrawerAppBar from "./components/headerMain";
 import Footer from "./components/footer";
 import style from "./mainPage.module.css"
 import { CardHero } from "./components/mainCard";
+import { CardSlider } from "./components/sliderCard";
 export default function Home() {
   return (
     <>
@@ -30,7 +31,19 @@ export default function Home() {
             Let's choose the package that is best for you and explore it happily and <br />cheerfully.
           </div>
         </div> 
+        <div className={style.verticalCard}>
          <CardHero />
+         </div>
+         <div className={style.centreTextMain}>
+          <div className={style.centreText}>
+            <b> Trusted by Thousands of<br/> Happy Customer</b>
+          </div>
+          <div className={style.centreText2}>
+          These are the stories of our customers who have joined us with great pleasure when using this crazy feature.          </div>
+        </div> 
+        <div>
+          <CardSlider />
+        </div>
         <Footer />
       </div>
     </>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
@@ -15,16 +15,26 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Dialog, DialogTitle, DialogContent, TextField, DialogActions } from '@mui/material';
 
 const drawerWidth = 240;
-const navItems = ['Pricing', 'Testimonials', "Sign In"];
+const navItems = ['Pricing', 'Testimonials', 'Sign In'];
 
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [openDialog, setOpenDialog] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen(prevState => !prevState);
+    setMobileOpen(!mobileOpen);
+  };
+
+  const handleDialogOpen = () => {
+    setOpenDialog(true);
+  };
+
+  const handleDialogClose = () => {
+    setOpenDialog(false);
   };
 
   const drawer = (
@@ -81,7 +91,7 @@ function DrawerAppBar(props) {
           </Box>
           <Button
             variant="contained"
-            href="#contained-buttons"
+            onClick={handleDialogOpen}
             sx={{
               borderRadius: '20px',
               padding: '6px 16px',
@@ -96,23 +106,47 @@ function DrawerAppBar(props) {
           </Button>
         </Toolbar>
       </AppBar>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, bgcolor: 'white' },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </nav>
+      <Drawer
+        container={container}
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+        sx={{
+          display: { xs: 'block', sm: 'none' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, bgcolor: 'white' },
+        }}
+      >
+        {drawer}
+      </Drawer>
+      <Dialog open={openDialog} onClose={handleDialogClose}>
+        <DialogTitle>Sign Up</DialogTitle>
+        <DialogContent>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="email"
+            label="Email Address"
+            type="email"
+            fullWidth
+            variant="standard"
+          />
+          <TextField
+            margin="dense"
+            id="password"
+            label="Password"
+            type="password"
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDialogClose}>Cancel</Button>
+          <Button onClick={handleDialogClose}>Sign Up</Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 }
